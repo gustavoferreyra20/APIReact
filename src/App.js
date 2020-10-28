@@ -1,33 +1,33 @@
 import React from 'react';
 import './App.css';
-const obtenerConsejo = require("./library");
+const obtenerRespuesta = require("./library");
 
 class App extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = { consejo: null };
+    this.state = { respuesta: null };
     this.consultarAPI = this.consultarAPI.bind(this);
   }
 
-  consultarAPI(consejoExtraido){
+  consultarAPI(respuestaExtraida){
 
-    if (consejoExtraido.slip.advice === this.state.consejo) {
-      obtenerConsejo(this.consultarAPI);
+    if(respuestaExtraida.activity === this.setState.respuesta){
+      obtenerRespuesta(this.consultarAPI);
     }
-
-    this.setState({consejo: consejoExtraido.slip.advice});
+    
+    this.setState({respuesta: respuestaExtraida.activity});
   }
 
   render(){
     return (
       <div className="App">
         <main>
-          <h1>API consejos</h1>
+          <h1>Bored API React</h1>
           <button onClick={this.handlerClick.bind(this)}>
-          Obtener consejo
+          Llamar API
           </button>
-            <h2>{this.state.consejo}</h2>
+            <h2>{this.state.respuesta}</h2>
         </main>
   
       </div>
@@ -35,7 +35,7 @@ class App extends React.Component{
   }
 
   handlerClick(){
-    obtenerConsejo(this.consultarAPI);
+    obtenerRespuesta(this.consultarAPI);
   }
 }
 

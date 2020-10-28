@@ -1,6 +1,6 @@
 const request = require('request');
 
-var url = 'https://api.adviceslip.com/advice';
+var url = 'http://www.boredapi.com/api/activity/';
 
 function obtenerConsejo(callback){
 
