@@ -11,11 +11,6 @@ class App extends React.Component{
   }
 
   consultarAPI(respuestaExtraida){
-
-    if(respuestaExtraida.activity === this.setState.respuesta){
-      obtenerRespuesta(this.consultarAPI);
-    }
-    
     this.setState({respuesta: respuestaExtraida.activity});
   }
 

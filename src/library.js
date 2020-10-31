@@ -2,7 +2,7 @@ const request = require('request');
 
 var url = 'http://www.boredapi.com/api/activity/';
 
-function obtenerConsejo(callback){
+function llamadoApi(callback){
 
     request(url, function (error, response, body) {
         if (!error && response.statusCode === 200) {
@@ -11,4 +11,4 @@ function obtenerConsejo(callback){
 });
 }
 
-module.exports = obtenerConsejo;
+module.exports = llamadoApi;
